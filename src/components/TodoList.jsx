@@ -1,5 +1,6 @@
 import { Component } from "react";
 import url from "./ApiCall";
+import style from "../styles/todoList.module.css";
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -46,9 +47,28 @@ class TodoList extends Component {
           console.log(err);
         });
     };
+    this.updateTask = (event) => {
+      let id = event.target.parentNode.querySelector("span").id;
+      fetch(url + id, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          console.log(response);
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
     this.componentDidMount = (event) => {
       fetch(url)
-        .then(() => {
+        .then((response) => {
           return response.json();
         })
         .then((data) => {
@@ -83,8 +103,21 @@ class TodoList extends Component {
         {this.state.taskName.map((task, i) => {
           return (
             <div key={i}>
-              <span id={task.taskId}>{task.taskName}</span>
-              <input type="button" value="X" onClick={this.deleteTask} />
+              {this.state.taskName.length ? (
+                <div>
+                  <span className={style[task.status]} id={task.taskId}>
+                    {task.taskName}
+                  </span>
+                  <input type="button" value="X" onClick={this.deleteTask} />
+                  <input
+                    type="button"
+                    value="Update"
+                    onClick={this.updateTask}
+                  />
+                </div>
+              ) : (
+                <p></p>
+              )}
             </div>
           );
         })}
