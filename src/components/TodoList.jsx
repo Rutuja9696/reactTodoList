@@ -1,12 +1,14 @@
 import { Component } from "react";
 import url from "./ApiCall";
 import style from "../styles/todoList.module.css";
+
 class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       taskName: [],
     };
+    //function to add new task
     this.submitForm = (event) => {
       event.preventDefault();
       fetch(url, {
@@ -23,12 +25,15 @@ class TodoList extends Component {
           let taskList = [...this.state.taskName];
           taskList.push(data.data);
           this.setState({ taskName: taskList });
+          alert("You have added new task successfully !");
         })
         .catch((err) => {
           console.log(err);
         });
+      //clear input field after submit
       document.getElementById("todoForm").reset();
     };
+    //function to delete task
     this.deleteTask = (event) => {
       let id = event.target.parentNode.querySelector("span").id;
       fetch(url + id, {
@@ -42,12 +47,13 @@ class TodoList extends Component {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
+          alert("Deleted 1 task successfully !");
         })
         .catch((err) => {
           console.log(err);
         });
     };
+    //function to update status of task
     this.updateTask = (event) => {
       let id = event.target.parentNode.querySelector("span").id;
       fetch(url + id, {
@@ -61,12 +67,13 @@ class TodoList extends Component {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
+          alert("Seems like you are motivated to complete task !");
         })
         .catch((err) => {
           console.log(err);
         });
     };
+    //life cycles
     this.componentDidMount = (event) => {
       fetch(url)
         .then((response) => {
@@ -95,6 +102,7 @@ class TodoList extends Component {
 
   render() {
     return (
+      //markup
       <div>
         <form id="todoForm" onSubmit={this.submitForm}>
           <label>Task list : </label>
