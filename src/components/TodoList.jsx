@@ -27,6 +27,7 @@ class TodoList extends Component {
         .catch((err) => {
           console.log(err);
         });
+      document.getElementById("todoForm").reset();
     };
     this.deleteTask = (event) => {
       let id = event.target.parentNode.querySelector("span").id;
@@ -95,7 +96,7 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.submitForm}>
+        <form id="todoForm" onSubmit={this.submitForm}>
           <label>Task list : </label>
           <input type="text" name="task" />
           <input type="submit" value="+ Add task" />
@@ -109,11 +110,7 @@ class TodoList extends Component {
                     {task.taskName}
                   </span>
                   <input type="button" value="X" onClick={this.deleteTask} />
-                  <input
-                    type="button"
-                    value="Update"
-                    onClick={this.updateTask}
-                  />
+                  <input type="button" value="Done" onClick={this.updateTask} />
                 </div>
               ) : (
                 <p></p>
