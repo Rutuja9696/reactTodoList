@@ -19,7 +19,6 @@ class TodoList extends Component {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
           let taskList = [...this.state.taskName];
           taskList.push(data.data);
           this.setState({ taskName: taskList });
@@ -28,7 +27,20 @@ class TodoList extends Component {
           console.log(err);
         });
     };
+    this.componentDidMount = (event) => {
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          this.setState({ taskName: [...data.data] });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
   }
+
   render() {
     return (
       <div>
@@ -37,6 +49,13 @@ class TodoList extends Component {
           <input type="text" name="task" />
           <input type="submit" value="Add task" />
         </form>
+        {this.state.taskName.map((task, i) => {
+          return (
+            <div key={i}>
+              <span id={task.taskId}>{task.taskName}</span>
+            </div>
+          );
+        })}
       </div>
     );
   }
