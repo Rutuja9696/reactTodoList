@@ -103,7 +103,8 @@ class TodoList extends Component {
   render() {
     return (
       //markup
-      <div>
+      <div className={style.container}>
+        <h2>Jot down your tasks here !</h2>
         <form id="todoForm" onSubmit={this.submitForm}>
           <input
             type="text"
@@ -117,12 +118,22 @@ class TodoList extends Component {
           return (
             <div key={i}>
               {this.state.taskName.length ? (
-                <div>
+                <div className={style.a}>
                   <span className={style[task.status]} id={task.taskId}>
                     {task.taskName}
                   </span>
-                  <input type="button" value="X" onClick={this.deleteTask} />
-                  <input type="button" value="Done" onClick={this.updateTask} />
+                  <input
+                    type="button"
+                    value="X"
+                    onClick={this.deleteTask}
+                    className={style.deleteButton}
+                  />
+                  <input
+                    type="button"
+                    value="Done"
+                    onClick={this.updateTask}
+                    className={style.doneButton}
+                  />
                 </div>
               ) : (
                 <p></p>
