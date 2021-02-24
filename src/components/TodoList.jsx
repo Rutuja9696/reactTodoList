@@ -116,24 +116,26 @@ class TodoList extends Component {
         </form>
         {this.state.taskName.map((task, i) => {
           return (
-            <div key={i}>
+            <div key={i} className={style.taskList}>
               {this.state.taskName.length ? (
-                <div className={style.a}>
+                <div className={style.listContainer}>
                   <span className={style[task.status]} id={task.taskId}>
                     {task.taskName}
                   </span>
-                  <input
-                    type="button"
-                    value="X"
-                    onClick={this.deleteTask}
-                    className={style.deleteButton}
-                  />
-                  <input
-                    type="button"
-                    value="Done"
-                    onClick={this.updateTask}
-                    className={style.doneButton}
-                  />
+                  <div>
+                    <input
+                      type="button"
+                      value="X"
+                      onClick={this.deleteTask}
+                      className={style.deleteButton}
+                    />
+                    <input
+                      type="button"
+                      value="Done"
+                      onClick={this.updateTask}
+                      className={style.doneButton}
+                    />
+                  </div>
                 </div>
               ) : (
                 <p></p>

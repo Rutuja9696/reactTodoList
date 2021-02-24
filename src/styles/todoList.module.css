@@ -5,7 +5,6 @@
   width: 80%;
   margin: auto;
   padding: 0px 0px 10px 0px;
-  border: 2px solid red;
 }
 h2 {
   color: rgb(122, 180, 245);
@@ -18,30 +17,38 @@ h2 {
   border-radius: 2px;
   color: rgb(83, 81, 81);
 }
-.addTask:hover {
+.addTask:focus {
   box-shadow: 0px 0px 12px 0px rgb(141, 186, 228);
+  outline: none;
+  border-color: transparent;
 }
 .addButton {
   height: 6vh;
-  width: 15%;
+  width: 12%;
   border: transparent;
   background-color: rgb(122, 180, 245);
   border-radius: 2px;
 }
-.a {
-  /* border: 1px solid black; */
+.listContainer {
   height: 6vh;
   width: 70%;
-  margin: 6px auto;
+  margin: 8px auto;
   padding: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   box-shadow: 0px 0px 10px 0px rgb(144, 144, 241);
   border-radius: 1px;
 }
+.taskList {
+  color: rgb(83, 81, 81);
+}
 .deleteButton {
   border: 1px solid blue;
-  height: 6vh;
-  width: 15%;
+  height: 5vh;
+  width: auto;
   margin: auto 6px;
+  padding: 10px 15px;
   border: transparent;
   background-color: rgb(241, 87, 87);
   border-radius: 2px;
@@ -49,9 +56,10 @@ h2 {
 }
 .doneButton {
   border: 1px solid blue;
-  height: 6vh;
-  width: 15%;
+  height: 5vh;
+  width: auto;
   margin: auto 6px;
+  padding: 10px;
   border: transparent;
   background-color: rgb(51, 153, 73);
   border-radius: 2px;
