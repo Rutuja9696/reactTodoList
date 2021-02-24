@@ -105,9 +105,13 @@ class TodoList extends Component {
       //markup
       <div>
         <form id="todoForm" onSubmit={this.submitForm}>
-          <label>Task list : </label>
-          <input type="text" name="task" />
-          <input type="submit" value="+ Add task" />
+          <input
+            type="text"
+            name="task"
+            placeholder="  Enter Task"
+            className={style.addTask}
+          />
+          <input type="submit" value="+ Add task" className={style.addButton} />
         </form>
         {this.state.taskName.map((task, i) => {
           return (

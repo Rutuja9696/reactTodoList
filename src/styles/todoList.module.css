@@ -1,3 +1,21 @@
 .Completed {
   text-decoration: line-through;
 }
+.addTask {
+  height: 6vh;
+  width: 60%;
+  margin: 10% 2%;
+  border: 1px solid rgb(122, 180, 245);
+  border-radius: 2px;
+  color: rgb(83, 81, 81);
+}
+/* .addTask :hover {
+  box-shadow: 120px rgb(141, 186, 228);
+} */
+.addButton {
+  height: 6vh;
+  width: 15%;
+  border: transparent;
+  background-color: rgb(122, 180, 245);
+  border-radius: 2px;
+}
