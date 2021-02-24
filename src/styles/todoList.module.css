@@ -36,8 +36,9 @@ h2 {
   padding: 4px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  box-shadow: 0px 0px 10px 0px rgb(144, 144, 241);
+  box-shadow: 0px 0px 6px 0px rgb(166, 166, 235);
   border-radius: 1px;
 }
 .taskList {
@@ -64,4 +65,63 @@ h2 {
   background-color: rgb(51, 153, 73);
   border-radius: 2px;
   color: white;
+}
+@media (max-width: 730px) {
+  h2 {
+    font-size: 18px;
+  }
+  .addtask {
+    font-size: 12px;
+  }
+  .addButton {
+    font-size: 12px;
+  }
+  .taskList {
+    font-size: 12px;
+  }
+  .deleteButton {
+    font-size: 12px;
+  }
+  .doneButton {
+    font-size: 12px;
+  }
+}
+@media (max-width: 690px) {
+  h2 {
+    font-size: 15px;
+  }
+  .addtask {
+    font-size: 10px;
+  }
+  .addButton {
+    font-size: 10px;
+  }
+  .taskList {
+    font-size: 10px;
+  }
+  .deleteButton {
+    font-size: 10px;
+  }
+  .doneButton {
+    font-size: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .addButton {
+    font-size: 10px;
+    padding: 1px;
+  }
+}
+@media (max-width: 530px) {
+  .addButton {
+    font-size: 8px;
+    padding: 1px;
+  }
+}
+
+@media (max-width: 440px) {
+  .addButton {
+    font-size: 6px;
+    padding: 1px;
+  }
 }
