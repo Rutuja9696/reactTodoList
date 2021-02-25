@@ -35,7 +35,7 @@ class TodoList extends Component {
     };
     //function to delete task
     this.deleteTask = (event) => {
-      let id = event.target.parentNode.querySelector("span").id;
+      let id = event.target.parentNode.parentNode.querySelector("span").id;
       fetch(url + id, {
         method: "DELETE",
         headers: {
@@ -55,7 +55,7 @@ class TodoList extends Component {
     };
     //function to update status of task
     this.updateTask = (event) => {
-      let id = event.target.parentNode.querySelector("span").id;
+      let id = event.target.parentNode.parentNode.querySelector("span").id;
       fetch(url + id, {
         method: "PATCH",
         headers: {
