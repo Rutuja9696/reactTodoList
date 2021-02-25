@@ -9,7 +9,7 @@ npm run start
 ## Repositories:
 
 - backend repo [link](https://github.com/Rutuja9696/Heroko-Atlas.git).
-- frontend repo [link](https://github.com/Rutuja9696/react2.git).
+- frontend repo [link](https://github.com/Rutuja9696/reactTodoList.git).
 
 ## Hosted Links:
 
