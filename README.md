@@ -14,4 +14,4 @@ npm run start
 ## Hosted Links:
 
 - Backend hosted on [heroku](https://node-mongodb-todolist.herokuapp.com/todoList/tasks/).
-- Frontend hosted on [Vercel]().
+- Frontend hosted on [Vercel](https://react2-nu.vercel.app/).
