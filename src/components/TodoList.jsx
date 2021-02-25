@@ -104,7 +104,7 @@ class TodoList extends Component {
     return (
       //markup
       <div className={style.container}>
-        <h2>Jot down your tasks here !</h2>
+        <h2>List down your tasks here !</h2>
         <form id="todoForm" onSubmit={this.submitForm}>
           <input
             type="text"
